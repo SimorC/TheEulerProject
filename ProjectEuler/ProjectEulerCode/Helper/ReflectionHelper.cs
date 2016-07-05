@@ -9,16 +9,18 @@ namespace ProjectEulerCode.Helper
 {
     public static class ReflectionHelper
     {
-        public static void CallProblemMethod(int qNumber)
+        public static string CallProblemMethod(int qNumber)
         {
             Stopwatch sw = new Stopwatch();
             sw.Start();
 
             var method = typeof(Problems).GetMethod("Problem" + qNumber);
-            method.Invoke(null, null);
+            var answer = method.Invoke(null, null);
 
             sw.Stop();
-            Console.WriteLine("\nTime elapsed: {0}", sw.Elapsed);
+            Console.WriteLine("Time elapsed: {0}\n", sw.Elapsed);
+
+            return answer.ToString();
         }
 
         public static string GetMethodsNumberString()

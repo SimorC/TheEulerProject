@@ -15,10 +15,10 @@ namespace ProjectEulerCode
         /// The sum of these multiples is 23.
         //  Find the sum of all the multiples of 3 or 5 below 1000.
         /// </summary>
-        public static void Problem1()
+        public static string Problem1()
         {
             var sum = Enumerable.Range(1, 1000).Where(x => x % 3 == 0 || x % 5 == 0).Sum();
-            Console.WriteLine(sum);
+            return sum.ToString();
         }
 
         /// <summary>
@@ -29,7 +29,7 @@ namespace ProjectEulerCode
         /// By considering the terms in the Fibonacci sequence whose values do not exceed
         /// four million, find the sum of the even-valued terms.
         /// </summary>
-        public static void Problem2()
+        public static string Problem2()
         {
             int sum = 2;
 
@@ -42,14 +42,14 @@ namespace ProjectEulerCode
                 sum += f2 % 2 == 0 ? f2 : 0;
             }
 
-            Console.WriteLine(sum);
+            return sum.ToString();
         }
 
         /// <summary>
         /// The prime factors of 13195 are 5, 7, 13 and 29.
         /// What is the largest prime factor of the number 600851475143 ?
         /// </summary>
-        public static void Problem3()
+        public static string Problem3()
         {
             long number = 600851475143;
             long floor = (long) Math.Floor(Math.Sqrt(number));
@@ -58,13 +58,11 @@ namespace ProjectEulerCode
             {
                 if (number % i == 0 && NumberHelper.CheckPrimeNumber(i))
                 {
-                    Console.WriteLine(i);
-                    break;
+                    return i.ToString();
                 }
-                
             }
 
-            
+            return "";
         }
 
         /// <summary>
@@ -72,7 +70,7 @@ namespace ProjectEulerCode
         /// made from the product of two 2-digit numbers is 9009 = 91 × 99.
         /// Find the largest palindrome made from the product of two 3-digit numbers.
         /// </summary>
-        public static void Problem4()
+        public static string Problem4()
         {
             int bigger = 0;
             for (int i = 999; i > 1; i--)
@@ -90,7 +88,34 @@ namespace ProjectEulerCode
                 }
             }
 
-            Console.WriteLine(bigger);
+            return bigger.ToString();
+        }
+
+        /// <summary>
+        /// 2520 is the smallest number that can be divided by each of
+        /// the numbers from 1 to 10 without any remainder.
+        /// What is the smallest positive number that is evenly divisible
+        /// by all of the numbers from 1 to 20?
+        /// </summary>
+        public static string Problem5()
+        {
+            for (int i = 20; i < 9999999999; i+=20)
+            {
+                bool flagOk = true;
+
+                for (int j = 1; j <= 20; j++)
+                {
+                    if (i % j != 0)
+                    {
+                        flagOk = false;
+                        break;
+                    }
+                }
+
+                if (flagOk) return i.ToString();
+            }
+
+            return "";
         }
     }
 }

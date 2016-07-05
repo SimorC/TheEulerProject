@@ -21,7 +21,8 @@ namespace ProjectEuler
                 try
                 {
                     Console.WriteLine("=======================\n");
-                    ReflectionHelper.CallProblemMethod(qNumber);
+                    var answer = ReflectionHelper.CallProblemMethod(qNumber);
+                    Console.WriteLine(answer);
                     Console.WriteLine("\n=======================");
                 }
                 catch (NullReferenceException)
