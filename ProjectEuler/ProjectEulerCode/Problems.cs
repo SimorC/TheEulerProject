@@ -15,7 +15,8 @@ namespace ProjectEulerCode
         /// </summary>
         public static void Problem1()
         {
-            Console.WriteLine("First problem");
+            var sum = Enumerable.Range(1, 1000).Where(x => x % 3 == 0 || x % 5 == 0).Sum();
+            Console.WriteLine(sum);
         }
 
         public static void Problem2()
