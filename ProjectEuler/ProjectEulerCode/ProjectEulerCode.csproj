@@ -41,6 +41,7 @@
   <ItemGroup>
     <Compile Include="Helper\NumberHelper.cs" />
     <Compile Include="Helper\ReflectionHelper.cs" />
+    <Compile Include="Helper\StringHelper.cs" />
     <Compile Include="Problems.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
