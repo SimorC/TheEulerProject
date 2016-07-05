@@ -1,0 +1,2 @@
+c:\users\simor\dropbox\pc\documents\visual studio 2013\Projects\ProjectEuler\ProjectEuler\bin\Debug\ProjectEuler.exe.config
+C:\Users\Simor\Dropbox\PC\Documents\GitHub\TheEulerProject\ProjectEuler\ProjectEuler\bin\Debug\ProjectEuler.exe.config
