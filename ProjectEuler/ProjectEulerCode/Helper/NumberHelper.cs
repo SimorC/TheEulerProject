@@ -28,5 +28,24 @@ namespace ProjectEulerCode.Helper
 
             return true;
         }
+
+        public static int SumOfSquares(int qtd)
+        {
+            int sum = 0;
+
+            for (int i = 1; i <= qtd; i++)
+            {
+                sum += (int)Math.Pow(i, 2);
+            }
+
+            return sum;
+        }
+
+        public static int SquareOfSums(int qtd)
+        {
+            int sum = Enumerable.Range(1, qtd).Sum();
+
+            return (int)Math.Pow(sum, 2);
+        }
     }
 }
