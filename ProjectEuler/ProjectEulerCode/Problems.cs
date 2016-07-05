@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using ProjectEulerCode.Helper;
 
 namespace ProjectEulerCode
 {
@@ -43,5 +44,29 @@ namespace ProjectEulerCode
 
             Console.WriteLine(sum);
         }
+
+        /// <summary>
+        /// The prime factors of 13195 are 5, 7, 13 and 29.
+        /// What is the largest prime factor of the number 600851475143 ?
+        /// </summary>
+        public static void Problem3()
+        {
+            long number = 600851475143;
+            long floor = (long) Math.Floor(Math.Sqrt(number));
+
+            for (long i = floor; i > 0; i--)
+            {
+                if (number % i == 0 && NumberHelper.CheckPrimeNumber(i))
+                {
+                    Console.WriteLine(i);
+                    break;
+                }
+                
+            }
+
+            
+        }
+
+
     }
 }
