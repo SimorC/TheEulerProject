@@ -40,6 +40,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Helper\NumberHelper.cs" />
+    <Compile Include="Helper\ProblemHelper.cs" />
     <Compile Include="Helper\ReflectionHelper.cs" />
     <Compile Include="Helper\StringHelper.cs" />
     <Compile Include="Problems.cs" />

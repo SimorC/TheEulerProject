@@ -11,11 +11,17 @@ namespace ProjectEuler
     {
         static void Main(string[] args)
         {
+            EulerProblems();
+        }
+
+        private static void EulerProblems()
+        {
             int qNumber = 0;
 
             while (true)
             {
-                Console.WriteLine("Type the number of the question {0} (or any invalid number to exit):", ReflectionHelper.GetMethodsNumberString());
+                Console.WriteLine("Type the number of the question {0} (or any invalid number to exit):",
+                    ReflectionHelper.GetMethodsNumberString());
                 if (!int.TryParse(Console.ReadLine(), out qNumber)) break;
 
                 try
