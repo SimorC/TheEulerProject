@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using ProjectEulerCode.Helper;
 
@@ -202,6 +203,42 @@ namespace ProjectEulerCode
             }
 
             return maxNumber.ToString();
+        }
+
+        /// <summary>
+        /// A Pythagorean triplet is a set of three natural numbers, a < b < c, for which,
+        /// a2 + b2 = c
+        /// For example, 32 + 42 = 9 + 16 = 25 = 52.     
+        /// There exists exactly one Pythagorean triplet for which a + b + c = 1000.
+        /// Find the product abc.
+        /// </summary>
+        /// <returns></returns>
+        public static string Problem9()
+        {
+            return "Not implemented";
+        }
+
+        /// <summary>
+        /// The sum of the primes below 10 is 2 + 3 + 5 + 7 = 17.
+        /// Find the sum of all the primes below two million.
+        /// </summary>
+        /// <returns></returns>
+        public static string Problem10()
+        {
+            // REALLY not happy about this. It's taking way too long. 
+            // Maybe I'll have to re-do the CheckPrimeNumber method
+            long sum = 0;
+            object objLock = new object();
+
+            Parallel.For(0, 2000000, (n) =>
+            {
+                lock (objLock)
+                {
+                    sum += NumberHelper.CheckPrimeNumber(n) ? n : 0;
+                }
+            });
+
+            return sum.ToString();
         }
     }
 }

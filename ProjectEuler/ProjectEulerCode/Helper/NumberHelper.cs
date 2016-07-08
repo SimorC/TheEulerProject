@@ -10,13 +10,16 @@ namespace ProjectEulerCode.Helper
     {
         public static bool CheckPrimeNumber(int number)
         {
+            if (number == 1) return false;
+            if (number == 2) return true;
+
             var divs = Enumerable.Range(2, (int)Math.Floor(Math.Sqrt(number))).Where(n => number % n == 0);
             return divs.Count() < 1;
         }
 
         public static bool CheckPrimeNumber(long number)
         {
-            if (number == 1) return true;
+            if (number == 1) return false;
             if (number == 2) return true;
 
             long floor = (long)Math.Floor(Math.Sqrt(number));
